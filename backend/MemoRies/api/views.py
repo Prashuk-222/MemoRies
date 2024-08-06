@@ -51,6 +51,32 @@ def getNotes_by_pk(request,pk):
 
 @api_view(['GET'])
 def getNotes(request):
-    notes = Note.objects.all()
+    notes = Note.objects.all().order_by('-updated')
     serializer = NoteSerilazer(notes, many = True)
     return Response(serializer.data)
+
+@api_view(['PUT'])
+def updateNote(request,pk):
+    data = request.data
+    note = Note.objects.get(id=pk)
+    serializer = NoteSerilazer(instance = note, data=data)
+    
+    if(serializer.is_valid()):
+        serializer.save()
+    
+    return Response(serializer.data)
+    
+@api_view(['DELETE'])
+def deleteNote(request,pk):
+    note = Note.objects.get(id=pk)
+    note.delete()
+    return Response('Note is Deleted,Successfully')
+
+@api_view(['POST'])
+def createNote(request):
+    data = request.data
+    note = Note.objects.create(
+        body = data['body']
+    )
+    serializer = NoteSerilazer(note, many = False)
+    return Response()
