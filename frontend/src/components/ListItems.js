@@ -1,44 +1,55 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-let getTime = (note) => {
-  return new Date(note.updated).toLocaleDateString()
+const getTime = (time) => {
+  return new Date(time).toLocaleDateString();
 }
 
-let getTitle = (note) => {
-  let title = note.body.split('\n')[0]
-  if(title.length>30){
-    return title.slice(0,30)
+async function deleteItem(elementId) {
+  // Create the request payload
+  const payload = { id: elementId };
+
+  try {
+    // Send the delete request to the backend server
+    const response = await fetch('/delete-item', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      console.log('Item deleted successfully');
+      // Optionally, remove the item from the DOM
+      document.getElementById(elementId).remove();
+    } else {
+      console.error('Failed to delete item');
+    }
+  } catch (error) {
+    console.error('Error:', error);
   }
-  return title
 }
 
-let getContent = (note) =>
-{
-  let title = getTitle(note)
-  let content = note.body.replaceAll('\n',' ')
-  content = content.replaceAll(title,'')
-
-  if(content.length>30){
-    return content.slice(0,45) + '...'
-  }
-  else{
-    return content
-  }
-}
-const ListItems = ({ note, id }) => {
+const ListItems = ({ note }) => {
   return (
-    <Link to = {`/note/${id}`}>
-      <div className='notes-list-item' >
-        <h3>{getTitle(note)}</h3>
-        <p> 
+
+    <div className='notes-list-item' >
+      <Link to={`/notes/${note.note_id}`}>
+        <h3>{note.title}</h3>
+        <div>
           <div>
-            <div align = 'left'>{getContent(note)}</div>
-            <div align = 'right'><span>{getTime(note)}</span></div>
+            <div align='left'>{note.content}</div>
+            <div key={13145} align='right'><span>{getTime(note.created_at)}</span></div>
+            <div key={6548} align='right'><span>{getTime(note.updated_at)}</span></div>
           </div>
-        </p>
-      </div>
-    </Link>
+        </div>
+      </Link>
+      <div id={`${note.note_id}`} onClick={() => deleteItem(note.note_id)} className="">Delete</div>
+    </div>
+
   )
 }
 

@@ -16,28 +16,28 @@ const Authentication = () => {
     e.preventDefault();
     try {
       const response = await fetch(`/api/login/`, {
-          method: 'POST',
-          headers: {
+        method: 'POST',
+        headers: {
           'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            username: 'username',
-            email: 'email',
-            password1: 'password1',
+        },
+        body: JSON.stringify({
+          username: 'username',
+          email: 'email',
+          password1: 'password1',
         })
       });
 
       const data = await response.json();
 
       if (response.ok) {
-          navigate(`/notes`);
-      } 
+        navigate(`/notes`);
+      }
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
-  const handleR = async (e)=>{
+  const handleR = async (e) => {
     e.preventDefault();
     if (!isLogin && password1 !== password2) {
       alert('Passwords do not match');
@@ -45,16 +45,16 @@ const Authentication = () => {
     }
     try {
       const response = await fetch(`/api/register/`, {
-          method: 'POST',
-          headers: {
+        method: 'POST',
+        headers: {
           'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            username: 'username',
-            email: 'email',
-            password1: 'password1',
-            password2: 'password2'
-          }),
+        },
+        body: JSON.stringify({
+          username: 'username',
+          email: 'email',
+          password1: 'password1',
+          password2: 'password2'
+        }),
       });
 
       const data = await response.json();
@@ -62,19 +62,19 @@ const Authentication = () => {
       if (response.ok) {
         navigate(`/`);
       } else {
-          alert(data.error);
+        alert(data.error);
       }
     } catch (error) {
       console.error('Error:', error);
     }
   };
-  
+
 
   const handleClick = () => {
-    if (isLogin===true){
+    if (isLogin === true) {
       handleL()
     }
-    else{
+    else {
       handleR()
     }
 
@@ -84,7 +84,7 @@ const Authentication = () => {
       <div className="note-header">
         <h3>
           <Link to="/">
-            <Arrow />
+            {/* <Arrow /> */}
           </Link>
         </h3>
       </div>

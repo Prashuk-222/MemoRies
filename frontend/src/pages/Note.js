@@ -1,142 +1,123 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Navigate} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import arrowSvg from '../svg_files/arrow.svg';
+import doneSvg from '../svg_files/done.svg';
+import editSvg from '../svg_files/edit.svg';
 import { Link } from 'react-router-dom';
-import {ReactComponent as Arrow} from '../svg_files/arrow.svg'
-import {ReactComponent as Done_Arrow} from '../svg_files/done.svg'
-import { useID } from './global.js'
-
+import { useUser } from './global.js';
+import NewNote from './NewNote.js';
 
 const Note = () => {
-  const {id} = useParams()
-  const [note, setNote] = useState(null);
-  // const [id, setId] = useID()
-  let navigate = useNavigate();
-  useEffect(() => {
-    getNote();
-  }, [id]);
+  const { id } = useParams();
+  console.log(id);
+  const [notes, setNotes] = useUser();
+  const [currentNote, setCurrentNote] = useState(null);
 
-  let getNote = async () => {
-    try{
-      if(id === 'new') {
-        return
-      }
-      else{
-        let response = await fetch(`/api/notes/${id}/`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch notes');
-        }
-        let data = await response.json();
-        setNote(data);
+  //for edit option
+  const [isEditing, setIsEditing] = useState(false);
+  const [content, setContent] = useState('');
+  const [editedContent, setEditedContent] = useState(content);
+  // console.log(notes);
+
+  const findNoteById = (note_id) => {
+    const note = notes.find(note => note.note_id === parseInt(note_id));
+    if (note) {
+      setCurrentNote(note);
+      // console.log(note);
+    } else {
+      console.error(`Note with ID ${note_id} not found`);
+    }
+  };
+
+  useEffect(() => {
+    if (notes) {
+      findNoteById(id);
+    }
+  }, [id, notes]);
+
+  useEffect(() => {
+    if (currentNote) {
+      setContent(currentNote.content);
+      setEditedContent(currentNote.content);
+    }
+  }, [currentNote]);
+
+  const handleEdit = () => {
+    setEditedContent(content);
+    setIsEditing(true);
+  };
+
+  const handleSubmit = async () => {
+    setContent(editedContent);
+    setIsEditing(false);
+
+    const updatedNote = {
+      ...currentNote,
+      content: editedContent,
+      updated_at: new Date().toISOString(),
+    };
+
+    try {
+      const response = await fetch('http://your-backend-server.com/notes/update', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedNote),
+      });
+
+      if (response.ok) {
+        console.log('Note updated successfully');
+      } else {
+        console.error('Failed to update note');
       }
     } catch (error) {
-      console.error('Error fetching notes:', error.message);
-      // Handle error state or retry logic here
+      console.error('Error:', error);
     }
   };
 
-  let createNote = async () => {
-    try{
-      let response = await fetch(`/api/notes/create/`,{
-      method: "POST",
-      headers: {
-        'Content-Type' : 'application/json'
-      },
-      body : JSON.stringify(note)
-    })
-    if (!response.ok) {
-      throw new Error('Failed to fetch notes');
-    }
-    }
-    catch (error) {
-      console.error('Error fetching notes:', error.message);
-      // Handle error state or retry logic here
-    }
-  };
 
-  let updateNote = async () =>{
-    try{
-      let response = await fetch(`/api/notes/${id}/update/`,{
-      method: "PUT",
-      headers: {
-        'Content-Type' : 'application/json'
-      },
-      body : JSON.stringify(note)
-    })
-    if (!response.ok) {
-      throw new Error('Failed to fetch notes');
-    }
-    }
-    catch (error) {
-      console.error('Error fetching notes:', error.message);
-      // Handle error state or retry logic here
-    }
-  }
-
-  let deleteNote = async () =>{
-    try{
-      let response = await fetch(`/api/notes/${id}/delete/`,{
-      method:"DELETE",
-      headers: {
-        'Content-Type' : 'application/json'
-      },
-    })
-    navigate('/notes')
-    if (!response.ok) {
-      throw new Error('Failed to fetch notes');
-    }
-    }
-    catch (error) {
-      console.error('Error fetching notes:', error.message);
-      // Handle error state or retry logic here
-    }
-  }
-
-
-  let handleChange = (value) => {
-    setNote(note => ({...note, 'body' : value}))
-  }
-
-  const handleClick = () => {
-    if(id !== 'new'){
-      if(note.body===''){
-        deleteNote();
-      }
-      else{
-        updateNote();
-      }
-    }
-    else if(id==='new'&& note.body !== null){
-      createNote();
-    }
-    navigate('/notes');
-  };
 
   return (
-    <div className='note'>
-      <div className='note-header'>
-        <h3>
-          <Link to="/auth">
-            <Arrow />
-          </Link>
-        </h3>
-        {id !== 'new' ? (
-          <button onClick={deleteNote}> Delete </button>
-        ): (
-          <button onClick={handleClick}> Done </button>
-        )}
+    (id === 'create') ? (<NewNote />) :
+      <div className='note'>
+        <div className='note-header'>
+          <h3>
+            <Link to="/notes">
+              <img src={arrowSvg} width="20" height="20" style={{ borderRadius: "50%" }} />
+            </Link>
+            {currentNote && <div>{currentNote.title}</div>}
+          </h3>
+          {/* <button onClick={handleClick}> Done </button> */}
+        </div>
+        {currentNote &&
+          <div>
+            {isEditing ? (
+              <div>
+                <textarea
+                  id="note-content"
+                  value={editedContent}
+                  onChange={(e) => setEditedContent(e.target.value)}
+                />
+                {/* <button onClick={handleSubmit}>Save</button> */}
+              </div>
+            ) : (
+              <div>
+                <div id="note-content">{content}</div>
+                {/* <button onClick={handleEdit}>Edit</button> */}
+              </div>
+            )}
+          </div>}
+
+        <div className='floating-button'>
+          <h3>
+
+            {(!isEditing) ? (<img onClick={handleEdit} src={editSvg} width="100%" height="100%" />) : (<img onClick={handleSubmit} src={doneSvg} width="100%" height="100%" />)}
+
+          </h3>
+        </div>
       </div>
-      <h1>
-        <textarea onChange={(e) => {handleChange(e.target.value)}} value={note?.body}></textarea>
-      </h1>
-      <div className='floating-button'>
-        <h3>
-          <Link onClick={handleClick}>
-            <Done_Arrow />
-          </Link>
-        </h3>
-      </div>
-    </div>
   );
 };
 
-export default Note;
+export default Note;

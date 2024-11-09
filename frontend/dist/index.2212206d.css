@@ -1,0 +1,369 @@
+@import "https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap";
+* {
+  box-sizing: border-box;
+}
+
+.note-form {
+  border-radius: 8px;
+  width: 100%;
+  padding: 20px;
+}
+
+.form-group label {
+  color: #cdc9c9;
+  margin-bottom: 5px;
+  font-weight: bold;
+  display: block;
+}
+
+.form-group input, .form-group textarea {
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.submit-button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background-color .3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+@media (width <= 600px) {
+  .note-form {
+    padding: 15px;
+  }
+
+  .form-group input, .form-group textarea {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+.auth {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.auth-header h3 {
+  margin: 0;
+}
+
+.auth h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 10px);
+  padding: 8px;
+}
+
+button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-footer p {
+  margin: 0;
+}
+
+.auth-footer button {
+  color: #007bff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+.auth-footer button:hover {
+  color: #0056b3;
+}
+
+:root {
+  --color-main: #f68657;
+  --color-text: #383a3f;
+  --color-dark: #1f2124;
+  --color-gray: #677;
+  --color-bg: #f3f6f9;
+  --color-light: #acb4bd;
+  --color-lighter: #f9f9f9;
+  --color-white: #fff;
+  --color-border: #e0e3e6;
+}
+
+.dark {
+  --color-main: #9adefe;
+  --color-text: #d2d09c;
+  --color-dark: #f5f6f7;
+  --color-gray: #b0bec5;
+  --color-bg: #121212;
+  --color-lighter: #1e1e1e;
+  --color-white: #242424;
+  --color-border: #333;
+  --color-hover-bg: #333;
+}
+
+* {
+  box-sizing: border-box;
+  color: inherit;
+  font-family: Lexend, sans-serif;
+  font-size: inherit;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.app {
+  background-color: var(--color-white);
+  width: 100%;
+  max-width: 480px;
+  height: 88vh;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 1px 1px 6px #00000080;
+}
+
+.app-header {
+  background-color: var(--color-lighter);
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  display: flex;
+  box-shadow: 0 1px 3px #0000004d;
+}
+
+.app-header h1 {
+  color: var(--color-main);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.app-header button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  transition: background-color .3s;
+}
+
+.app-header button > svg {
+  fill: var(--color-main);
+  object-fit: cover;
+  width: 25px;
+  height: 25px;
+}
+
+.app-header button:hover {
+  background-color: #0000001a;
+}
+
+.app-body {
+  padding: 16px;
+}
+
+.notes-header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  display: flex;
+}
+
+.notes-title, .notes-count {
+  color: var(--color-main);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.notes-count {
+  color: var(--color-gray);
+  font-size: 18px;
+}
+
+.notes-list {
+  scrollbar-width: none;
+  height: 70vh;
+  margin: 16px 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.notes-list::-webkit-scrollbar {
+  display: none;
+}
+
+.notes-list-item {
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 12px;
+  padding: 8px 16px;
+  transition: background-color .2s ease-in-out;
+}
+
+.notes-list-item:hover {
+  background-color: var(--color-hover-bg);
+  cursor: pointer;
+}
+
+.notes-list-item h3, .notes-list-item p span {
+  font-weight: 600;
+}
+
+.notes-list-item p span {
+  color: var(--color-gray);
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.notes-list-item p {
+  color: var(--color-light);
+  font-size: 14px;
+}
+
+.floating-button {
+  background: var(--color-main);
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  font-size: 48px;
+  transition: background-color .3s;
+  display: flex;
+  position: absolute;
+  bottom: 24px;
+  right: 16px;
+  box-shadow: 1px 1px 10px #0003;
+}
+
+.floating-button > svg {
+  fill: var(--color-bg);
+}
+
+.floating-button:hover {
+  background-color: #0097a7;
+}
+
+.note-header {
+  color: var(--color-main);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+}
+
+.note-header h3 {
+  cursor: pointer;
+  align-items: center;
+  font-size: 24px;
+  display: flex;
+}
+
+.note-header h3 svg {
+  fill: var(--color-main);
+  width: 20px;
+  margin-right: 8px;
+}
+
+.note-header button {
+  cursor: pointer;
+  background-color: #0000;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color .3s;
+}
+
+.note-header button:hover {
+  color: var(--color-main);
+}
+
+.note textarea {
+  background-color: var(--color-white);
+  resize: none;
+  scrollbar-width: none;
+  border: none;
+  width: 100%;
+  height: 70vh;
+  padding: 16px 12px;
+}
+
+.note textarea:active, .note textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.note textarea::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=index.2212206d.css.map */
