@@ -1,84 +1,91 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ReactComponent as Arrow } from '../svg_files/arrow.svg';
-import '../auth.css'
+import { URL } from '../constants';
+import '../auth.css';
 
 const Authentication = () => {
-  const [username, setUsername] = useState('');
-  const [password1, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [isLogin, setIsLogin] = useState(true);
+  const [Name, setName] = useState('');
+  const [password1, setPassword] = useState('');
   const [password2, setConfirmPassword] = useState('');
+  const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
 
-
-  const handleL = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/login/`, {
+      const response = await fetch(`${URL}account/api/token/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: 'username',
-          email: 'email',
-          password1: 'password1',
-        })
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        navigate(`/notes`);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
-
-  const handleR = async (e) => {
-    e.preventDefault();
-    if (!isLogin && password1 !== password2) {
-      alert('Passwords do not match');
-      return;
-    }
-    try {
-      const response = await fetch(`/api/register/`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: 'username',
-          email: 'email',
-          password1: 'password1',
-          password2: 'password2'
+          email: email,
+          password: password1,
         }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        navigate(`/`);
+        console.log('Login Successful:', data);
+        // Save the token to localStorage or sessionStorage
+        localStorage.setItem('accessToken', data.access);
+        localStorage.setItem('refreshToken', data.refresh);
+        setIsVerified(true);
+        navigate(`/notes`);
       } else {
-        alert(data.error);
+        alert(data.detail || 'Login failed');
       }
     } catch (error) {
       console.error('Error:', error);
+      alert('Something went wrong during login.');
     }
   };
 
-
-  const handleClick = () => {
-    if (isLogin === true) {
-      handleL()
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    if (!isLogin && password1 !== password2) {
+      alert('Passwords do not match');
+      return;
     }
-    else {
-      handleR()
+    try {
+      const response = await fetch(`${URL}account/api/register/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password1,
+          first_name: firstName, // Only include this during registration
+        }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        console.log('Registration Successful:', data);
+        alert('Registration successful! Please log in.');
+        setIsLogin(true); // Switch to login after registration
+      } else {
+        alert(data.error || 'Registration failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong during registration.');
     }
+  };
+  
+  const handleClick = (event) => {
+    if (isLogin) {
+      handleLogin(event);
+    } else {
+      handleRegister(event);
+    }
+  };
 
-  }
   return (
     <div className="auth">
       <div className="note-header">
@@ -90,15 +97,28 @@ const Authentication = () => {
       </div>
       <h1>{isLogin ? 'Login' : 'Register'}</h1>
       <form onSubmit={handleClick}>
-        <div className="form-group">
-          <label>UserName:</label>
-          <input
-            type="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
+        {!isLogin && (
+          <>
+            <div className="form-group">
+              <label>Name:</label>
+              <input
+                type="text"
+                value={Name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Comfirm Password:</label>
+              <input
+                type="text"
+                value={password2}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
+          </>
+        )}
         <div className="form-group">
           <label>Email:</label>
           <input
@@ -111,7 +131,7 @@ const Authentication = () => {
         <div className="form-group">
           <label>Password:</label>
           <input
-            type="password1"
+            type="password"
             value={password1}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -121,14 +141,14 @@ const Authentication = () => {
           <div className="form-group">
             <label>Confirm Password:</label>
             <input
-              type="password2"
+              type="password"
               value={password2}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </div>
         )}
-        <button type="submit" >{isLogin ? 'Login' : 'Register'}</button>
+        <button type="submit">{isLogin ? 'Login' : 'Register'}</button>
       </form>
       <div className="auth-footer">
         <p>
