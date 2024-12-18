@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ReactComponent as Arrow } from '../svg_files/arrow.svg';
 import { URL } from '../constants';
 import '../auth.css';
+import { useVerification } from './global';
 
 const Authentication = () => {
   const [email, setEmail] = useState('');
@@ -11,7 +12,7 @@ const Authentication = () => {
   const [password2, setConfirmPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
-
+  const { isVerified, setIsVerified } = useVerification();
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -59,7 +60,8 @@ const Authentication = () => {
         body: JSON.stringify({
           email: email,
           password: password1,
-          first_name: firstName, // Only include this during registration
+          first_name: Name, // Only include this during registration
+          password2: password2,
         }),
       });
   
@@ -97,29 +99,9 @@ const Authentication = () => {
       </div>
       <h1>{isLogin ? 'Login' : 'Register'}</h1>
       <form onSubmit={handleClick}>
-        {!isLogin && (
+        {isLogin && (
           <>
-            <div className="form-group">
-              <label>Name:</label>
-              <input
-                type="text"
-                value={Name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Comfirm Password:</label>
-              <input
-                type="text"
-                value={password2}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-            </div>
-          </>
-        )}
-        <div className="form-group">
+          <div className="form-group">
           <label>Email:</label>
           <input
             type="email"
@@ -137,7 +119,49 @@ const Authentication = () => {
             required
           />
         </div>
+          </>
+        )}
         {!isLogin && (
+          <>
+            <div className="form-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+            <div className="form-group">
+              <label>Name:</label>
+              <input
+                type="text"
+                value={Name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Password:</label>
+              <input
+                type="password"
+                value={password1}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+            <label>Confirm Password:</label>
+            <input
+              type="password"
+              value={password2}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
+          </>
+        )}
+        {/* {!isLogin && (
           <div className="form-group">
             <label>Confirm Password:</label>
             <input
@@ -147,14 +171,14 @@ const Authentication = () => {
               required
             />
           </div>
-        )}
+        )} */}
         <button type="submit">{isLogin ? 'Login' : 'Register'}</button>
       </form>
       <div className="auth-footer">
         <p>
-          {isLogin ? 'Need an account?' : 'Already have an account?'}
           <button onClick={() => setIsLogin(!isLogin)}>
-            {isLogin ? 'Register' : 'Login'}
+          {isLogin ? 'Need an account?' : 'Already have an account?'}
+            {/* {isLogin ? 'Register' : 'Login'} */}
           </button>
         </p>
       </div>

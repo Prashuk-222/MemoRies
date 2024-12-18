@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import arrowSvg from '../svg_files/arrow.svg';
 import doneSvg from '../svg_files/done.svg';
 import '../form.css';
@@ -9,13 +9,14 @@ const NewNote = () => {
     const [content, setContent] = useState('');
     const [error, setError] = useState(null); // To handle errors
     const [success, setSuccess] = useState(false); // To indicate successful submission
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const noteData = {
-            title,
-            content,
+            title: title,
+            content: content,
         };
 
         try {
@@ -25,7 +26,7 @@ const NewNote = () => {
                 return;
             }
 
-            const response = await fetch('http://127.0.0.1:8000/api/notes/new/', {
+            const response = await fetch('http://127.0.0.1:8000/api/notes/create/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -38,9 +39,10 @@ const NewNote = () => {
                 setSuccess(true);
                 setError(null);
                 console.log('Note created successfully');
+                navigate('/notes');
                 // Optionally, reset the form fields
-                setTitle('');
-                setContent('');
+                // setTitle('');
+                // setContent('');
             } else {
                 const errorData = await response.json();
                 setError(errorData.detail || 'Failed to create note');

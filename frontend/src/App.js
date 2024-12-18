@@ -6,22 +6,18 @@ import Note from './pages/Note'
 import NewNote from './pages/NewNote.js'
 import './App.css'
 import { createBrowserRouter, Outlet } from 'react-router-dom';
-import { Authorization, GetID, GetUserData } from "./pages/global.js";
+import { GlobalProvider } from "./pages/global.js";
 
 function App() {
   return (
-    <Authorization>
-      <GetUserData>
-        <GetID>
-          <div className="container dark">
-            <div className='app' >
-              <Header />
-              <Outlet />
-            </div>
-          </div>
-        </GetID>
-      </GetUserData>
-    </Authorization>
+    <GlobalProvider>
+      <div className="container dark">
+        <div className='app'>
+          <Header />
+          <Outlet />
+        </div>
+      </div>
+    </GlobalProvider>
   )
 }
 
@@ -40,13 +36,13 @@ const appRouter = createBrowserRouter([
         element: <NotesPage />
       },
       {
-        path: '/notes/:id',
+        path: '/notes/:id/:title/:content',
         element: <Note />
       },
-      // {
-      //   path: '/notes/create',
-      //   element: <NewNote />
-      // },
+      {
+        path: '/notes/create',
+        element: <NewNote />
+      },
 
     ],
   }

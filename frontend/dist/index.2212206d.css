@@ -1,11 +1,25 @@
 @import "https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap";
+.delete-button {
+  color: #fff;
+  background-color: #0000;
+  border: none;
+  width: 70px;
+  height: 50px;
+  margin-left: 10px;
+  padding: 2px;
+}
+
+.delete-button:hover {
+  background-color: #191414;
+}
+
 .auth {
   border: 1px solid #ccc;
   border-radius: 10px;
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  box-shadow: 0 0 10px #0000001a;
+  box-shadow: 0 0 20px #0000001a;
 }
 
 .auth-header h3 {
@@ -62,6 +76,120 @@ button:hover {
 
 .auth-footer button:hover {
   color: #0056b3;
+}
+
+.note {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.note-header {
+  margin-bottom: 15px;
+}
+
+.note-header-top {
+  align-items: center;
+  gap: 15px;
+  display: flex;
+}
+
+.back-button {
+  background: #000;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  transition: background-color .2s;
+  display: flex;
+}
+
+.back-button:hover {
+  background-color: #1f1d1d;
+}
+
+.note-title {
+  color: #fff;
+  border-radius: 10px;
+  margin: 0;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.note-title-editor {
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.note-content-container {
+  background: #fff;
+  border-radius: 8px;
+  max-height: 400px;
+  margin-bottom: 15px;
+  padding: 15px;
+  overflow-y: auto;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+.note-content {
+  white-space: pre-wrap;
+  color: #080404;
+  width: 75px;
+  height: 70px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.note-editor {
+  resize: vertical;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 100px;
+  max-height: 300px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+.edit-button, .save-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  transition: transform .2s;
+  display: flex;
+  box-shadow: 0 2px 5px #0003;
+}
+
+.edit-button {
+  background: #000;
+}
+
+.save-button {
+  background: #2196f3;
+}
+
+.edit-button:hover, .save-button:hover {
+  transform: scale(1.1);
+}
+
+.edit-button img, .save-button img {
+  filter: brightness(0) invert();
 }
 
 * {
@@ -365,5 +493,15 @@ a {
 
 .note textarea::-webkit-scrollbar {
   display: none;
+}
+
+.logout-button {
+  color: #fff;
+  background-color: #0000;
+  border: none;
+  width: 50px;
+  height: 50px;
+  margin-left: -200px;
+  padding: 2px;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

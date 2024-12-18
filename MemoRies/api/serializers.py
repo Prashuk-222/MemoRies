@@ -6,17 +6,20 @@ from api.models import Note
 class NoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Note
-        fields = ('body', 'updated', 'id')
+        fields = ('title', 'content', 'created_at', 'updated_at', 'id')
 
-    # def to_representation(self, obj):
-    #     return {
-    #         "body": obj.body,
-    #         "updated": obj.updated,
-    #         "id": obj.id,
-    #     }
+    def to_representation(self, obj):
+        return {
+            "title": obj.title,
+            "content": obj.content,
+            "created_at": obj.created_at,
+            "updated_at": obj.updated_at,
+            "id": obj.id,
+        }
 
-    def validate_body(self, value):
+    def validate_content(self, value):
         if len(value) > 6000:
-            raise serializers.ValidationError('This field can only contain max 6000 characters.')
+            raise serializers.ValidationError(
+                'This field can only contain max 6000 characters.')
 
         return value

@@ -260,3 +260,13 @@ a {
 .note textarea::-webkit-scrollbar {
   display: none;
 }
+
+.logout-button {
+  background-color: transparent;
+  color: white;
+  padding: 2px 2px;
+  border: none;
+  margin-left: -200px;
+  width: 50px;
+  height: 50px;
+}

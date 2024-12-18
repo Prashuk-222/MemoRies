@@ -1,44 +1,68 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ListItems from '../components/ListItems';
-import { useUser } from './global';
+import { useVerification } from './global';
 
 const NotesPage = () => {
-  const [notes, setNotes] = useUser();
-  const [loading, setLoading] = useState(true); // To manage loading state
-  const [error, setError] = useState(null); // To manage errors
+  const [notes, setNotes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const { isVerified } = useVerification();
 
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const token = localStorage.getItem('accessToken'); // Retrieve token from localStorage
+        const token = localStorage.getItem('accessToken');
         if (!token) {
-          throw new Error('Authentication token not found. Please log in again.');
+          setError('No authentication token found');
+          navigate('/'); // Redirect to login
+          return;
         }
 
         const response = await fetch('http://127.0.0.1:8000/api/notes/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`, // Include token in Authorization header
+            'Authorization': `Bearer ${token}`,
           },
         });
 
         if (!response.ok) {
-          throw new Error(`Error ${response.status}: Failed to fetch notes.`);
+          if (response.status === 401) {
+            // Token expired or invalid
+            localStorage.removeItem('accessToken');
+            navigate('/'); // Redirect to login
+            throw new Error('Session expired. Please login again.');
+          }
+          throw new Error(`Error ${response.status}: ${await response.text()}`);
         }
 
         const data = await response.json();
-        setNotes(data); // Update notes in global state
+        setNotes(data);
+        setError(null);
       } catch (err) {
         console.error('Error fetching notes:', err);
         setError(err.message);
       } finally {
-        setLoading(false); // Stop loading indicator
+        setLoading(false);
       }
     };
 
-    fetchNotes();
-  }, [setNotes]); // Run only once when the component mounts
+    if (isVerified) {
+      fetchNotes();
+    } else {
+      navigate('/');
+    }
+  }, [navigate, isVerified]);
+
+  const handleDelete = (deletedNoteId) => {
+    setNotes(prevNotes => prevNotes.filter(note => note.id !== deletedNoteId));
+  };
+
+  if (!isVerified) {
+    return null; // or a loading spinner
+  }
 
   if (loading) {
     return <div className='notes'>Loading notes...</div>;
@@ -55,8 +79,12 @@ const NotesPage = () => {
         <p className='notes-count'>{notes?.length}</p>
       </div>
       <div className='notes-list'>
-        {notes?.map((note, index) => (
-          <ListItems key={index} note={note} />
+        {notes?.map((note) => (
+          <ListItems 
+            key={note.id} 
+            note={note} 
+            onDelete={handleDelete}
+          />
         ))}
       </div>
     </div>

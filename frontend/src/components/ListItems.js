@@ -1,47 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom'; 
+import '../style/ListItems.css';
 const getTime = (time) => {
   return new Date(time).toLocaleDateString();
 };
 
-async function deleteItem(noteId) {
-  // Get the token from localStorage
-  const token = localStorage.getItem('accessToken');
+const ListItems = ({ note, onDelete }) => {
+  const navigate = useNavigate();
 
-  if (!token) {
-    console.error('Authentication token not found. Please log in again.');
-    return;
-  }
-
-  try {
-    // Send the delete request to the backend server
-    const response = await fetch(`http://127.0.0.1:8000/api/notes/${noteId}/`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`, // Include token in Authorization header
-      },
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      console.log('Note deleted successfully');
-      // Optionally, remove the item from the DOM
-      document.getElementById(noteId).remove();
-    } else {
-      console.error('Failed to delete note');
+  const handleDelete = async (noteId) => {
+    // Get the token from localStorage
+    const token = localStorage.getItem('accessToken');
+    
+    if (!token) {
+      console.error('Authentication token not found. Please log in again.');
+      return;
     }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
 
-const ListItems = ({ note }) => {
+    try {
+      // Send the delete request to the backend server
+      const response = await fetch(`http://127.0.0.1:8000/api/notes/${noteId}/`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      
+      if (response.status === 204) {
+        console.log('Note deleted successfully');
+        onDelete(noteId);
+      } else if (response.status === 404) {
+        console.error('Note not found');
+      } else {
+        console.error('Failed to delete note');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+  
   return (
     <div className='notes-list-item'>
-      <Link to={`/notes/${note.note_id}`}>
+      <Link to={`/notes/${note.id}/${encodeURIComponent(note.title)}/${encodeURIComponent(note.content)}`}>
         <h3>{note.title}</h3>
         <div>
           <div>
@@ -55,13 +55,13 @@ const ListItems = ({ note }) => {
           </div>
         </div>
       </Link>
-      <div
-        id={`${note.note_id}`}
-        onClick={() => deleteItem(note.note_id)}
+      <button 
+        id={`${note.id}`}
+        onClick={() => handleDelete(note.id)}
         className="delete-button"
       >
         Delete
-      </div>
+      </button>
     </div>
   );
 };
