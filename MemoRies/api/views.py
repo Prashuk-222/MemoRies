@@ -8,6 +8,9 @@ from api.models import Note
 from accounts.models import ProfileUser
 from MemoRies import settings
 import requests
+from rest_framework import status
+from rest_framework.views import APIView
+
 
 class NotesListView(generics.ListAPIView):
     """
@@ -50,7 +53,9 @@ class NoteListView(generics.RetrieveUpdateDestroyAPIView):
     def update(self, request, *args, **kwargs):
         # You can add custom validation before update if needed
         instance = self.get_object()
-        serializer = self.get_serializer(instance, data=request.data, partial=True)  # partial=True allows partial update
+        # partial=True allows partial update
+        serializer = self.get_serializer(
+            instance, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
         return Response(serializer.data)
@@ -65,6 +70,7 @@ class NoteListView(generics.RetrieveUpdateDestroyAPIView):
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 @api_view(['POST'])
 def recaptcha(request):
     r = requests.post(
@@ -75,3 +81,21 @@ def recaptcha(request):
         }
     )
     return Response({'captcha': r.json()})
+
+
+class NoteDetail(APIView):
+    def delete(self, request, pk):
+        try:
+            note = Note.objects.get(pk=pk)
+            note.delete()
+            return Response({'success': True}, status=status.HTTP_204_NO_CONTENT)
+        except Note.DoesNotExist:
+            return Response(
+                {'success': False, 'error': 'Note not found'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Exception as e:
+            return Response(
+                {'success': False, 'error': str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )

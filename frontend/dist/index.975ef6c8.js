@@ -2958,7 +2958,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./App.js":"2kQhy"}],"iTorj":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./App.js":"2kQhy","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -27201,7 +27201,265 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === 'function') __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"9xmpe":[function(require,module,exports,__globalThis) {
+},{}],"2kQhy":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$f00f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f00f.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _header = require("./components/header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
+var _notesPage = require("./pages/NotesPage");
+var _notesPageDefault = parcelHelpers.interopDefault(_notesPage);
+var _authentication = require("./pages/Authentication");
+var _authenticationDefault = parcelHelpers.interopDefault(_authentication);
+var _note = require("./pages/Note");
+var _noteDefault = parcelHelpers.interopDefault(_note);
+var _newNoteJs = require("./pages/NewNote.js");
+var _newNoteJsDefault = parcelHelpers.interopDefault(_newNoteJs);
+var _appCss = require("./App.css");
+var _reactRouterDom = require("react-router-dom");
+var _globalJs = require("./pages/global.js");
+function App() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalJs.GlobalProvider), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container dark",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "app",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 16,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 17,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/App.js",
+                lineNumber: 15,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "src/App.js",
+            lineNumber: 14,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "src/App.js",
+        lineNumber: 13,
+        columnNumber: 5
+    }, this);
+}
+_c = App;
+const appRouter = (0, _reactRouterDom.createBrowserRouter)([
+    {
+        path: '/',
+        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
+            fileName: "src/App.js",
+            lineNumber: 28,
+            columnNumber: 14
+        }, undefined),
+        children: [
+            {
+                path: '/',
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _authenticationDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 32,
+                    columnNumber: 18
+                }, undefined)
+            },
+            {
+                path: 'notes',
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _notesPageDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 36,
+                    columnNumber: 18
+                }, undefined)
+            },
+            {
+                path: '/notes/:id/:title/:content',
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _noteDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 40,
+                    columnNumber: 18
+                }, undefined)
+            },
+            {
+                path: '/notes/create',
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _newNoteJsDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 44,
+                    columnNumber: 18
+                }, undefined)
+            }
+        ]
+    }
+]);
+exports.default = appRouter;
+var _c;
+$RefreshReg$(_c, "App");
+
+  $parcel$ReactRefreshHelpers$f00f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/header":"aorvA","./pages/NotesPage":"fGhUP","./pages/Authentication":"hq0Ad","./pages/Note":"b6F3x","./pages/NewNote.js":"2agS1","./App.css":"6n0o6","react-router-dom":"9xmpe","./pages/global.js":"g1CK0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aorvA":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$7672 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7672.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _createSvg = require("../svg_files/create.svg");
+var _createSvgDefault = parcelHelpers.interopDefault(_createSvg);
+var _logoutSvg = require("../svg_files/logout.svg");
+var _logoutSvgDefault = parcelHelpers.interopDefault(_logoutSvg);
+var _global = require("../pages/global");
+var _s = $RefreshSig$();
+const Header = ()=>{
+    _s();
+    const { id } = (0, _reactRouterDom.useParams)();
+    const { isVerified, setIsVerified } = (0, _global.useVerification)();
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    const handleLogout = ()=>{
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        setIsVerified(false);
+        navigate('/');
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: id === 'new' ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {}, void 0, false) : // Show the create button only if the user is authenticated
+        isVerified ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "app-header",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "Note List"
+                    }, void 0, false, {
+                        fileName: "src/components/header.js",
+                        lineNumber: 26,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        style: {
+                            display: "flex"
+                        },
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/notes/create",
+                            className: "floating-button",
+                            style: {
+                                position: "relative",
+                                bottom: "0",
+                                right: "12px"
+                            },
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                src: (0, _createSvgDefault.default),
+                                width: "80%",
+                                height: "80%"
+                            }, void 0, false, {
+                                fileName: "src/components/header.js",
+                                lineNumber: 35,
+                                columnNumber: 17
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/header.js",
+                            lineNumber: 30,
+                            columnNumber: 15
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/header.js",
+                        lineNumber: 29,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "logout-button",
+                        onClick: handleLogout,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _logoutSvgDefault.default),
+                            style: {
+                                width: "25px",
+                                height: "25px"
+                            }
+                        }, void 0, false, {
+                            fileName: "src/components/header.js",
+                            lineNumber: 38,
+                            columnNumber: 70
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/header.js",
+                        lineNumber: 38,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/header.js",
+                lineNumber: 25,
+                columnNumber: 13
+            }, undefined)
+        }, void 0, false) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "app-header",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "Note List"
+                }, void 0, false, {
+                    fileName: "src/components/header.js",
+                    lineNumber: 43,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    style: {
+                        color: 'gray',
+                        fontStyle: 'italic'
+                    },
+                    children: "Please log in to create a note"
+                }, void 0, false, {
+                    fileName: "src/components/header.js",
+                    lineNumber: 46,
+                    columnNumber: 13
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/header.js",
+            lineNumber: 42,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false);
+};
+_s(Header, "V+VEZEymgG9zgTSO9n9dv8kNrb8=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams),
+        (0, _global.useVerification),
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
+_c = Header;
+exports.default = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$7672.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../svg_files/create.svg":"9nQNZ","../svg_files/logout.svg":"kPYWk","../pages/global":"g1CK0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports,__globalThis) {
 /**
  * React Router DOM v6.28.0
  *
@@ -34438,7 +34696,187 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"km3Ru":[function(require,module,exports,__globalThis) {
+},{}],"9nQNZ":[function(require,module,exports,__globalThis) {
+module.exports = require("fb97f9c7e62d8fcb").getBundleURL('bLxZJ') + "create.e3e8b46e.svg" + "?" + Date.now();
+
+},{"fb97f9c7e62d8fcb":"lgJ39"}],"lgJ39":[function(require,module,exports,__globalThis) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"kPYWk":[function(require,module,exports,__globalThis) {
+module.exports = require("bcb24d8dbdf1401c").getBundleURL('bLxZJ') + "logout.bb2ca8d9.svg" + "?" + Date.now();
+
+},{"bcb24d8dbdf1401c":"lgJ39"}],"g1CK0":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$36b3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$36b3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GlobalProvider", ()=>GlobalProvider);
+parcelHelpers.export(exports, "useAuth", ()=>useAuth);
+parcelHelpers.export(exports, "useID", ()=>useID);
+parcelHelpers.export(exports, "useUser", ()=>useUser);
+parcelHelpers.export(exports, "useVerify", ()=>useVerify);
+parcelHelpers.export(exports, "useVerification", ()=>useVerification);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$(), _s1 = $RefreshSig$(), _s2 = $RefreshSig$(), _s3 = $RefreshSig$(), _s4 = $RefreshSig$(), _s5 = $RefreshSig$();
+// Existing contexts
+const AuthContext = /*#__PURE__*/ (0, _react.createContext)();
+const IDContext = /*#__PURE__*/ (0, _react.createContext)();
+const UserContext = /*#__PURE__*/ (0, _react.createContext)();
+const VerifyContext = /*#__PURE__*/ (0, _react.createContext)();
+// Add Verification Context
+const VerificationContext = /*#__PURE__*/ (0, _react.createContext)();
+const GlobalProvider = ({ children })=>{
+    _s();
+    const [isVerified, setIsVerified] = (0, _react.useState)(()=>{
+        // Initialize isVerified based on the presence of token in localStorage
+        return !!localStorage.getItem('accessToken');
+    });
+    // Add an effect to update verification status when token changes
+    (0, _react.useEffect)(()=>{
+        const checkToken = ()=>{
+            const token = localStorage.getItem('accessToken');
+            setIsVerified(!!token);
+        };
+        // Check initially
+        checkToken();
+        // Add event listener for storage changes
+        window.addEventListener('storage', checkToken);
+        return ()=>{
+            window.removeEventListener('storage', checkToken);
+        };
+    }, []);
+    const [auth, setAuth] = (0, _react.useState)(false);
+    const [id, setId] = (0, _react.useState)(null);
+    const [user, setUser] = (0, _react.useState)(null);
+    const [verify, setVerify] = (0, _react.useState)(false);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AuthContext.Provider, {
+        value: [
+            auth,
+            setAuth
+        ],
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(IDContext.Provider, {
+            value: [
+                id,
+                setId
+            ],
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(UserContext.Provider, {
+                value: [
+                    user,
+                    setUser
+                ],
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(VerifyContext.Provider, {
+                    value: [
+                        verify,
+                        setVerify
+                    ],
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(VerificationContext.Provider, {
+                        value: {
+                            isVerified,
+                            setIsVerified
+                        },
+                        children: children
+                    }, void 0, false, {
+                        fileName: "src/pages/global.js",
+                        lineNumber: 47,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/pages/global.js",
+                    lineNumber: 46,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/global.js",
+                lineNumber: 45,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/pages/global.js",
+            lineNumber: 44,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/pages/global.js",
+        lineNumber: 43,
+        columnNumber: 5
+    }, undefined);
+};
+_s(GlobalProvider, "dReFK1D2h0iE6s7aepFaG1WH8h0=");
+_c = GlobalProvider;
+const useAuth = ()=>{
+    _s1();
+    return (0, _react.useContext)(AuthContext);
+};
+_s1(useAuth, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+const useID = ()=>{
+    _s2();
+    return (0, _react.useContext)(IDContext);
+};
+_s2(useID, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+const useUser = ()=>{
+    _s3();
+    return (0, _react.useContext)(UserContext);
+};
+_s3(useUser, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+const useVerify = ()=>{
+    _s4();
+    return (0, _react.useContext)(VerifyContext);
+};
+_s4(useVerify, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+const useVerification = ()=>{
+    _s5();
+    const context = (0, _react.useContext)(VerificationContext);
+    if (!context) throw new Error('useVerification must be used within a GlobalProvider');
+    return context;
+};
+_s5(useVerification, "b9L3QQ+jgeyIrH0NfHrJ8nn7VMU=");
+var _c;
+$RefreshReg$(_c, "GlobalProvider");
+
+  $parcel$ReactRefreshHelpers$36b3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports,__globalThis) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 var { version } = require("630b62916b1ae0e7");
@@ -34583,403 +35021,7 @@ function registerExportsForReactRefresh(module1) {
 },{"7422ead32dcc1e6b":"786KC","630b62916b1ae0e7":"4SQxb"}],"4SQxb":[function(require,module,exports,__globalThis) {
 module.exports = JSON.parse("{\"name\":\"react-refresh\",\"description\":\"React is a JavaScript library for building user interfaces.\",\"keywords\":[\"react\"],\"version\":\"0.14.2\",\"homepage\":\"https://reactjs.org/\",\"bugs\":\"https://github.com/facebook/react/issues\",\"license\":\"MIT\",\"files\":[\"LICENSE\",\"README.md\",\"babel.js\",\"runtime.js\",\"cjs/\",\"umd/\"],\"main\":\"runtime.js\",\"exports\":{\".\":\"./runtime.js\",\"./runtime\":\"./runtime.js\",\"./babel\":\"./babel.js\",\"./package.json\":\"./package.json\"},\"repository\":{\"type\":\"git\",\"url\":\"https://github.com/facebook/react.git\",\"directory\":\"packages/react\"},\"engines\":{\"node\":\">=0.10.0\"},\"devDependencies\":{\"react-16-8\":\"npm:react@16.8.0\",\"react-dom-16-8\":\"npm:react-dom@16.8.0\",\"scheduler-0-13\":\"npm:scheduler@0.13.0\"}}");
 
-},{}],"2kQhy":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$f00f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f00f.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _header = require("./components/header");
-var _headerDefault = parcelHelpers.interopDefault(_header);
-var _notesPage = require("./pages/NotesPage");
-var _notesPageDefault = parcelHelpers.interopDefault(_notesPage);
-var _authentication = require("./pages/Authentication");
-var _authenticationDefault = parcelHelpers.interopDefault(_authentication);
-var _note = require("./pages/Note");
-var _noteDefault = parcelHelpers.interopDefault(_note);
-var _newNoteJs = require("./pages/NewNote.js");
-var _newNoteJsDefault = parcelHelpers.interopDefault(_newNoteJs);
-var _appCss = require("./App.css");
-var _reactRouterDom = require("react-router-dom");
-var _globalJs = require("./pages/global.js");
-function App() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalJs.Authorization), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalJs.GetUserData), {
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalJs.GetID), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "container dark",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "app",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
-                                fileName: "src/App.js",
-                                lineNumber: 18,
-                                columnNumber: 15
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
-                                fileName: "src/App.js",
-                                lineNumber: 19,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/App.js",
-                        lineNumber: 17,
-                        columnNumber: 13
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 16,
-                    columnNumber: 11
-                }, this)
-            }, void 0, false, {
-                fileName: "src/App.js",
-                lineNumber: 15,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
-            fileName: "src/App.js",
-            lineNumber: 14,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "src/App.js",
-        lineNumber: 13,
-        columnNumber: 5
-    }, this);
-}
-_c = App;
-const appRouter = (0, _reactRouterDom.createBrowserRouter)([
-    {
-        path: '/',
-        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
-            fileName: "src/App.js",
-            lineNumber: 32,
-            columnNumber: 14
-        }, undefined),
-        children: [
-            {
-                path: '/',
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _authenticationDefault.default), {}, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 36,
-                    columnNumber: 18
-                }, undefined)
-            },
-            {
-                path: 'notes',
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _notesPageDefault.default), {}, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 40,
-                    columnNumber: 18
-                }, undefined)
-            },
-            {
-                path: '/notes/:id',
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _noteDefault.default), {}, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 44,
-                    columnNumber: 18
-                }, undefined)
-            }
-        ]
-    }
-]);
-exports.default = appRouter;
-var _c;
-$RefreshReg$(_c, "App");
-
-  $parcel$ReactRefreshHelpers$f00f.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/header":"aorvA","./pages/NotesPage":"fGhUP","./pages/Authentication":"hq0Ad","./pages/Note":"b6F3x","./pages/NewNote.js":"2agS1","./App.css":"6n0o6","react-router-dom":"9xmpe","./pages/global.js":"g1CK0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aorvA":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$7672 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$7672.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _createSvg = require("../svg_files/create.svg");
-var _createSvgDefault = parcelHelpers.interopDefault(_createSvg);
-var _global = require("../pages/global"); // Custom hook to check if the user is authenticated
-var _s = $RefreshSig$();
-const Header = ()=>{
-    _s();
-    const { id } = (0, _reactRouterDom.useParams)();
-    const { isVerified } = (0, _global.useVerify)(); // Get the authentication status
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "app-header",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Note List"
-            }, void 0, false, {
-                fileName: "src/components/header.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined),
-            id === 'new' ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {}, void 0, false) : // Show the create button only if the user is authenticated
-            isVerified ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                style: {
-                    display: "flex"
-                },
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                    to: "/notes/create",
-                    className: "floating-button",
-                    style: {
-                        position: "relative",
-                        bottom: "0",
-                        right: "12px"
-                    },
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        src: (0, _createSvgDefault.default),
-                        width: "80%",
-                        height: "80%"
-                    }, void 0, false, {
-                        fileName: "src/components/header.js",
-                        lineNumber: 25,
-                        columnNumber: 17
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/header.js",
-                    lineNumber: 20,
-                    columnNumber: 15
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/header.js",
-                lineNumber: 19,
-                columnNumber: 13
-            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                style: {
-                    color: 'gray',
-                    fontStyle: 'italic'
-                },
-                children: "Please log in to create a note"
-            }, void 0, false, {
-                fileName: "src/components/header.js",
-                lineNumber: 29,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/header.js",
-        lineNumber: 11,
-        columnNumber: 5
-    }, undefined);
-};
-_s(Header, "MKatOlRKRQ7Ke3JEh1/XkaKqysk=", false, function() {
-    return [
-        (0, _reactRouterDom.useParams),
-        (0, _global.useVerify)
-    ];
-});
-_c = Header;
-exports.default = Header;
-var _c;
-$RefreshReg$(_c, "Header");
-
-  $parcel$ReactRefreshHelpers$7672.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../svg_files/create.svg":"9nQNZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../pages/global":"g1CK0"}],"9nQNZ":[function(require,module,exports,__globalThis) {
-module.exports = require("fb97f9c7e62d8fcb").getBundleURL('bLxZJ') + "create.e3e8b46e.svg" + "?" + Date.now();
-
-},{"fb97f9c7e62d8fcb":"lgJ39"}],"lgJ39":[function(require,module,exports,__globalThis) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"g1CK0":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$36b3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$36b3.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Authorization", ()=>Authorization);
-parcelHelpers.export(exports, "useVerify", ()=>useVerify);
-parcelHelpers.export(exports, "GetID", ()=>GetID);
-parcelHelpers.export(exports, "useID", ()=>useID);
-parcelHelpers.export(exports, "GetUserData", ()=>GetUserData);
-parcelHelpers.export(exports, "useUser", ()=>useUser);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _s = $RefreshSig$(), _s1 = $RefreshSig$(), _s2 = $RefreshSig$(), _s3 = $RefreshSig$(), _s4 = $RefreshSig$(), _s5 = $RefreshSig$();
-// Create a context for user verification
-const VerifyContext = /*#__PURE__*/ (0, _react.createContext)();
-const Authorization = ({ children })=>{
-    _s();
-    const [isVerified, setIsVerified] = (0, _react.useState)(false);
-    // Handle login to set verification state
-    const handleLogin = (data)=>{
-        setIsVerified(true); // Set isVerified to true on successful login
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(VerifyContext.Provider, {
-        value: {
-            isVerified,
-            setIsVerified,
-            handleLogin
-        },
-        children: children
-    }, void 0, false, {
-        fileName: "src/pages/global.js",
-        lineNumber: 15,
-        columnNumber: 9
-    }, undefined);
-};
-_s(Authorization, "2C7pNd1FuWz8xViaqz/CMtUnXAE=");
-_c = Authorization;
-// Custom hook to use VerifyContext
-const useVerify = ()=>{
-    _s1();
-    return (0, _react.useContext)(VerifyContext);
-};
-_s1(useVerify, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
-// Create a context for note ID
-const IdContext = /*#__PURE__*/ (0, _react.createContext)();
-const GetID = ({ children })=>{
-    _s2();
-    const [id, setId] = (0, _react.useState)('create'); // Default value is 'create'
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(IdContext.Provider, {
-        value: {
-            id,
-            setId
-        },
-        children: children
-    }, void 0, false, {
-        fileName: "src/pages/global.js",
-        lineNumber: 31,
-        columnNumber: 9
-    }, undefined);
-};
-_s2(GetID, "301sgudkUBeedX5BDAiZckWz/o8=");
-_c1 = GetID;
-// Custom hook to use IdContext
-const useID = ()=>{
-    _s3();
-    return (0, _react.useContext)(IdContext);
-};
-_s3(useID, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
-// Create a context for user data
-const UserDataContext = /*#__PURE__*/ (0, _react.createContext)();
-const GetUserData = ({ children })=>{
-    _s4();
-    const [user, setUser] = (0, _react.useState)([]);
-    const [loading, setLoading] = (0, _react.useState)(true); // To handle loading state
-    const [error, setError] = (0, _react.useState)(null); // To handle errors
-    (0, _react.useEffect)(()=>{
-        const fetchNotes = async ()=>{
-            try {
-                const token = localStorage.getItem('accessToken'); // Retrieve token from localStorage
-                if (!token) {
-                    setError('Authentication token not found. Please log in again.');
-                    setLoading(false);
-                    return;
-                }
-                const response = await fetch('http://127.0.0.1:8000/api/notes/', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    setUser(data); // Set the fetched notes
-                    setError(null);
-                } else {
-                    const errorData = await response.json();
-                    setError(errorData.detail || 'Failed to fetch notes');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                setError('An unexpected error occurred. Please try again.');
-            } finally{
-                setLoading(false); // Ensure loading state is updated
-            }
-        };
-        fetchNotes();
-    }, []); // Fetch notes once when the component mounts
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(UserDataContext.Provider, {
-        value: {
-            user,
-            setUser,
-            loading,
-            error
-        },
-        children: children
-    }, void 0, false, {
-        fileName: "src/pages/global.js",
-        lineNumber: 86,
-        columnNumber: 9
-    }, undefined);
-};
-_s4(GetUserData, "S9faV3qATabEbTeW5fd4UDMKwtY=");
-_c2 = GetUserData;
-// Custom hook to use UserDataContext
-const useUser = ()=>{
-    _s5();
-    return (0, _react.useContext)(UserDataContext);
-};
-_s5(useUser, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
-var _c, _c1, _c2;
-$RefreshReg$(_c, "Authorization");
-$RefreshReg$(_c1, "GetID");
-$RefreshReg$(_c2, "GetUserData");
-
-  $parcel$ReactRefreshHelpers$36b3.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fGhUP":[function(require,module,exports,__globalThis) {
+},{}],"fGhUP":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$f364 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34991,20 +35033,27 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
 var _listItems = require("../components/ListItems");
 var _listItemsDefault = parcelHelpers.interopDefault(_listItems);
 var _global = require("./global");
 var _s = $RefreshSig$();
 const NotesPage = ()=>{
     _s();
-    const [notes, setNotes] = (0, _global.useUser)();
-    const [loading, setLoading] = (0, _react.useState)(true); // To manage loading state
-    const [error, setError] = (0, _react.useState)(null); // To manage errors
+    const [notes, setNotes] = (0, _react.useState)([]);
+    const [loading, setLoading] = (0, _react.useState)(true);
+    const [error, setError] = (0, _react.useState)(null);
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    const { isVerified } = (0, _global.useVerification)();
     (0, _react.useEffect)(()=>{
         const fetchNotes = async ()=>{
             try {
-                const token = localStorage.getItem('accessToken'); // Retrieve token from localStorage
-                if (!token) throw new Error('Authentication token not found. Please log in again.');
+                const token = localStorage.getItem('accessToken');
+                if (!token) {
+                    setError('No authentication token found');
+                    navigate('/'); // Redirect to login
+                    return;
+                }
                 const response = await fetch('http://127.0.0.1:8000/api/notes/', {
                     method: 'GET',
                     headers: {
@@ -35012,26 +35061,41 @@ const NotesPage = ()=>{
                         'Authorization': `Bearer ${token}`
                     }
                 });
-                if (!response.ok) throw new Error(`Error ${response.status}: Failed to fetch notes.`);
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        // Token expired or invalid
+                        localStorage.removeItem('accessToken');
+                        navigate('/'); // Redirect to login
+                        throw new Error('Session expired. Please login again.');
+                    }
+                    throw new Error(`Error ${response.status}: ${await response.text()}`);
+                }
                 const data = await response.json();
-                setNotes(data); // Update notes in global state
+                setNotes(data);
+                setError(null);
             } catch (err) {
                 console.error('Error fetching notes:', err);
                 setError(err.message);
             } finally{
-                setLoading(false); // Stop loading indicator
+                setLoading(false);
             }
         };
-        fetchNotes();
+        if (isVerified) fetchNotes();
+        else navigate('/');
     }, [
-        setNotes
-    ]); // Run only once when the component mounts
+        navigate,
+        isVerified
+    ]);
+    const handleDelete = (deletedNoteId)=>{
+        setNotes((prevNotes)=>prevNotes.filter((note)=>note.id !== deletedNoteId));
+    };
+    if (!isVerified) return null; // or a loading spinner
     if (loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "notes",
         children: "Loading notes..."
     }, void 0, false, {
         fileName: "src/pages/NotesPage.js",
-        lineNumber: 44,
+        lineNumber: 68,
         columnNumber: 12
     }, undefined);
     if (error) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35042,7 +35106,7 @@ const NotesPage = ()=>{
         ]
     }, void 0, true, {
         fileName: "src/pages/NotesPage.js",
-        lineNumber: 48,
+        lineNumber: 72,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35056,7 +35120,7 @@ const NotesPage = ()=>{
                         children: "\u2636 Notes"
                     }, void 0, false, {
                         fileName: "src/pages/NotesPage.js",
-                        lineNumber: 54,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35064,39 +35128,41 @@ const NotesPage = ()=>{
                         children: notes?.length
                     }, void 0, false, {
                         fileName: "src/pages/NotesPage.js",
-                        lineNumber: 55,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/NotesPage.js",
-                lineNumber: 53,
+                lineNumber: 77,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "notes-list",
-                children: notes?.map((note, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listItemsDefault.default), {
-                        note: note
-                    }, index, false, {
+                children: notes?.map((note)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listItemsDefault.default), {
+                        note: note,
+                        onDelete: handleDelete
+                    }, note.id, false, {
                         fileName: "src/pages/NotesPage.js",
-                        lineNumber: 59,
+                        lineNumber: 83,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/pages/NotesPage.js",
-                lineNumber: 57,
+                lineNumber: 81,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/NotesPage.js",
-        lineNumber: 52,
+        lineNumber: 76,
         columnNumber: 5
     }, undefined);
 };
-_s(NotesPage, "ssCMyQsEmhuj24VLnec4on6zExk=", false, function() {
+_s(NotesPage, "+BcfZ9UebHi07rn2oGsgs4BaWbA=", false, function() {
     return [
-        (0, _global.useUser)
+        (0, _reactRouterDom.useNavigate),
+        (0, _global.useVerification)
     ];
 });
 _c = NotesPage;
@@ -35109,7 +35175,7 @@ $RefreshReg$(_c, "NotesPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../components/ListItems":"hKvAk","./global":"g1CK0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hKvAk":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../components/ListItems":"hKvAk","./global":"g1CK0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hKvAk":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$c4ab = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35122,41 +35188,43 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
+var _listItemsCss = require("../style/ListItems.css");
+var _s = $RefreshSig$();
 const getTime = (time)=>{
     return new Date(time).toLocaleDateString();
 };
-async function deleteItem(noteId) {
-    // Get the token from localStorage
-    const token = localStorage.getItem('accessToken');
-    if (!token) {
-        console.error('Authentication token not found. Please log in again.');
-        return;
-    }
-    try {
-        // Send the delete request to the backend server
-        const response = await fetch(`http://127.0.0.1:8000/api/notes/${noteId}/`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
-        });
-        const data = await response.json();
-        if (data.success) {
-            console.log('Note deleted successfully');
-            // Optionally, remove the item from the DOM
-            document.getElementById(noteId).remove();
-        } else console.error('Failed to delete note');
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-const ListItems = ({ note })=>{
+const ListItems = ({ note, onDelete })=>{
+    _s();
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    const handleDelete = async (noteId)=>{
+        // Get the token from localStorage
+        const token = localStorage.getItem('accessToken');
+        if (!token) {
+            console.error('Authentication token not found. Please log in again.');
+            return;
+        }
+        try {
+            // Send the delete request to the backend server
+            const response = await fetch(`http://127.0.0.1:8000/api/notes/${noteId}/`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            if (response.status === 204) {
+                console.log('Note deleted successfully');
+                onDelete(noteId);
+            } else if (response.status === 404) console.error('Note not found');
+            else console.error('Failed to delete note');
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "notes-list-item",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                to: `/notes/${note.note_id}`,
+                to: `/notes/${note.id}/${encodeURIComponent(note.title)}/${encodeURIComponent(note.content)}`,
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                         children: note.title
@@ -35221,9 +35289,9 @@ const ListItems = ({ note })=>{
                 lineNumber: 44,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                id: `${note.note_id}`,
-                onClick: ()=>deleteItem(note.note_id),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                id: `${note.id}`,
+                onClick: ()=>handleDelete(note.id),
                 className: "delete-button",
                 children: "Delete"
             }, void 0, false, {
@@ -35238,6 +35306,11 @@ const ListItems = ({ note })=>{
         columnNumber: 5
     }, undefined);
 };
+_s(ListItems, "CzcTeTziyjMsSrAVmHuCCb6+Bfg=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = ListItems;
 exports.default = ListItems;
 var _c;
@@ -35248,7 +35321,7 @@ $RefreshReg$(_c, "ListItems");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hq0Ad":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../style/ListItems.css":"ljQ8T","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ljQ8T":[function() {},{}],"hq0Ad":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$d5c4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35264,6 +35337,7 @@ var _reactRouterDom = require("react-router-dom");
 var _arrowSvg = require("../svg_files/arrow.svg");
 var _constants = require("../constants");
 var _authCss = require("../auth.css");
+var _global = require("./global");
 var _s = $RefreshSig$();
 const Authentication = ()=>{
     _s();
@@ -35273,6 +35347,7 @@ const Authentication = ()=>{
     const [password2, setConfirmPassword] = (0, _react.useState)('');
     const [isLogin, setIsLogin] = (0, _react.useState)(true);
     const navigate = (0, _reactRouterDom.useNavigate)();
+    const { isVerified, setIsVerified } = (0, _global.useVerification)();
     const handleLogin = async (e)=>{
         e.preventDefault();
         try {
@@ -35315,7 +35390,8 @@ const Authentication = ()=>{
                 body: JSON.stringify({
                     email: email,
                     password: password1,
-                    first_name: firstName
+                    first_name: Name,
+                    password2: password2
                 })
             });
             const data = await response.json();
@@ -35343,31 +35419,113 @@ const Authentication = ()=>{
                         to: "/"
                     }, void 0, false, {
                         fileName: "src/pages/Authentication.js",
-                        lineNumber: 93,
+                        lineNumber: 95,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/pages/Authentication.js",
-                    lineNumber: 92,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Authentication.js",
-                lineNumber: 91,
+                lineNumber: 93,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: isLogin ? 'Login' : 'Register'
             }, void 0, false, {
                 fileName: "src/pages/Authentication.js",
-                lineNumber: 98,
+                lineNumber: 100,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
                 onSubmit: handleClick,
                 children: [
+                    isLogin && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "form-group",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        children: "Email:"
+                                    }, void 0, false, {
+                                        fileName: "src/pages/Authentication.js",
+                                        lineNumber: 105,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "email",
+                                        value: email,
+                                        onChange: (e)=>setEmail(e.target.value),
+                                        required: true
+                                    }, void 0, false, {
+                                        fileName: "src/pages/Authentication.js",
+                                        lineNumber: 106,
+                                        columnNumber: 11
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/pages/Authentication.js",
+                                lineNumber: 104,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "form-group",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        children: "Password:"
+                                    }, void 0, false, {
+                                        fileName: "src/pages/Authentication.js",
+                                        lineNumber: 114,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "password",
+                                        value: password1,
+                                        onChange: (e)=>setPassword(e.target.value),
+                                        required: true
+                                    }, void 0, false, {
+                                        fileName: "src/pages/Authentication.js",
+                                        lineNumber: 115,
+                                        columnNumber: 11
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/pages/Authentication.js",
+                                lineNumber: 113,
+                                columnNumber: 9
+                            }, undefined)
+                        ]
+                    }, void 0, true),
                     !isLogin && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "form-group",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        children: "Email:"
+                                    }, void 0, false, {
+                                        fileName: "src/pages/Authentication.js",
+                                        lineNumber: 127,
+                                        columnNumber: 11
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "email",
+                                        value: email,
+                                        onChange: (e)=>setEmail(e.target.value),
+                                        required: true
+                                    }, void 0, false, {
+                                        fileName: "src/pages/Authentication.js",
+                                        lineNumber: 128,
+                                        columnNumber: 11
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/pages/Authentication.js",
+                                lineNumber: 126,
+                                columnNumber: 13
+                            }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "form-group",
                                 children: [
@@ -35375,7 +35533,7 @@ const Authentication = ()=>{
                                         children: "Name:"
                                     }, void 0, false, {
                                         fileName: "src/pages/Authentication.js",
-                                        lineNumber: 103,
+                                        lineNumber: 136,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35385,169 +35543,115 @@ const Authentication = ()=>{
                                         required: true
                                     }, void 0, false, {
                                         fileName: "src/pages/Authentication.js",
-                                        lineNumber: 104,
+                                        lineNumber: 137,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/pages/Authentication.js",
-                                lineNumber: 102,
+                                lineNumber: 135,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "form-group",
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        children: "Comfirm Password:"
+                                        children: "Password:"
                                     }, void 0, false, {
                                         fileName: "src/pages/Authentication.js",
-                                        lineNumber: 112,
+                                        lineNumber: 145,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "text",
-                                        value: password2,
-                                        onChange: (e)=>setConfirmPassword(e.target.value),
+                                        type: "password",
+                                        value: password1,
+                                        onChange: (e)=>setPassword(e.target.value),
                                         required: true
                                     }, void 0, false, {
                                         fileName: "src/pages/Authentication.js",
-                                        lineNumber: 113,
+                                        lineNumber: 146,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/pages/Authentication.js",
-                                lineNumber: 111,
+                                lineNumber: 144,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "form-group",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        children: "Confirm Password:"
+                                    }, void 0, false, {
+                                        fileName: "src/pages/Authentication.js",
+                                        lineNumber: 154,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "password",
+                                        value: password2,
+                                        onChange: (e)=>setConfirmPassword(e.target.value),
+                                        required: true
+                                    }, void 0, false, {
+                                        fileName: "src/pages/Authentication.js",
+                                        lineNumber: 155,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/pages/Authentication.js",
+                                lineNumber: 153,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "form-group",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                children: "Email:"
-                            }, void 0, false, {
-                                fileName: "src/pages/Authentication.js",
-                                lineNumber: 123,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "email",
-                                value: email,
-                                onChange: (e)=>setEmail(e.target.value),
-                                required: true
-                            }, void 0, false, {
-                                fileName: "src/pages/Authentication.js",
-                                lineNumber: 124,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/Authentication.js",
-                        lineNumber: 122,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "form-group",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                children: "Password:"
-                            }, void 0, false, {
-                                fileName: "src/pages/Authentication.js",
-                                lineNumber: 132,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "password",
-                                value: password1,
-                                onChange: (e)=>setPassword(e.target.value),
-                                required: true
-                            }, void 0, false, {
-                                fileName: "src/pages/Authentication.js",
-                                lineNumber: 133,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/Authentication.js",
-                        lineNumber: 131,
-                        columnNumber: 9
-                    }, undefined),
-                    !isLogin && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "form-group",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                children: "Confirm Password:"
-                            }, void 0, false, {
-                                fileName: "src/pages/Authentication.js",
-                                lineNumber: 142,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "password",
-                                value: password2,
-                                onChange: (e)=>setConfirmPassword(e.target.value),
-                                required: true
-                            }, void 0, false, {
-                                fileName: "src/pages/Authentication.js",
-                                lineNumber: 143,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/pages/Authentication.js",
-                        lineNumber: 141,
-                        columnNumber: 11
-                    }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         type: "submit",
                         children: isLogin ? 'Login' : 'Register'
                     }, void 0, false, {
                         fileName: "src/pages/Authentication.js",
-                        lineNumber: 151,
+                        lineNumber: 175,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/Authentication.js",
-                lineNumber: 99,
+                lineNumber: 101,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "auth-footer",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    children: [
-                        isLogin ? 'Need an account?' : 'Already have an account?',
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            onClick: ()=>setIsLogin(!isLogin),
-                            children: isLogin ? 'Register' : 'Login'
-                        }, void 0, false, {
-                            fileName: "src/pages/Authentication.js",
-                            lineNumber: 156,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        onClick: ()=>setIsLogin(!isLogin),
+                        children: isLogin ? 'Need an account?' : 'Already have an account?'
+                    }, void 0, false, {
+                        fileName: "src/pages/Authentication.js",
+                        lineNumber: 179,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
                     fileName: "src/pages/Authentication.js",
-                    lineNumber: 154,
+                    lineNumber: 178,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Authentication.js",
-                lineNumber: 153,
+                lineNumber: 177,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/Authentication.js",
-        lineNumber: 90,
+        lineNumber: 92,
         columnNumber: 5
     }, undefined);
 };
-_s(Authentication, "2vh7a9BybBVGFzlS6YTYFFjrxco=", false, function() {
+_s(Authentication, "nzuSZlhUC1nD0cxow12KpObWnQ4=", false, function() {
     return [
-        (0, _reactRouterDom.useNavigate)
+        (0, _reactRouterDom.useNavigate),
+        (0, _global.useVerification)
     ];
 });
 _c = Authentication;
@@ -35560,7 +35664,7 @@ $RefreshReg$(_c, "Authentication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../svg_files/arrow.svg":"4ytiA","../constants":"3huJa","../auth.css":"h2FMX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4ytiA":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../svg_files/arrow.svg":"4ytiA","../constants":"3huJa","../auth.css":"h2FMX","./global":"g1CK0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4ytiA":[function(require,module,exports,__globalThis) {
 module.exports = require("f406c0a5584cd39b").getBundleURL('bLxZJ') + "arrow.8489cfe8.svg" + "?" + Date.now();
 
 },{"f406c0a5584cd39b":"lgJ39"}],"3huJa":[function(require,module,exports,__globalThis) {
@@ -35785,57 +35889,30 @@ var _doneSvg = require("../svg_files/done.svg");
 var _doneSvgDefault = parcelHelpers.interopDefault(_doneSvg);
 var _editSvg = require("../svg_files/edit.svg");
 var _editSvgDefault = parcelHelpers.interopDefault(_editSvg);
-var _globalJs = require("./global.js");
-var _newNoteJs = require("./NewNote.js");
-var _newNoteJsDefault = parcelHelpers.interopDefault(_newNoteJs);
+var _noteCss = require("../style/Note.css");
 var _s = $RefreshSig$();
 const Note = ()=>{
     _s();
-    const { id } = (0, _reactRouterDom.useParams)();
-    const [notes, setNotes] = (0, _globalJs.useUser)();
-    const [currentNote, setCurrentNote] = (0, _react.useState)(null);
-    // For edit option
+    const { id, title: initialTitle, content: initialContent } = (0, _reactRouterDom.useParams)();
     const [isEditing, setIsEditing] = (0, _react.useState)(false);
-    const [content, setContent] = (0, _react.useState)('');
-    const [editedContent, setEditedContent] = (0, _react.useState)('');
-    const findNoteById = (note_id)=>{
-        const note = notes.find((note)=>note.note_id === parseInt(note_id));
-        if (note) setCurrentNote(note);
-        else console.error(`Note with ID ${note_id} not found`);
-    };
-    (0, _react.useEffect)(()=>{
-        if (notes) findNoteById(id);
-    }, [
-        id,
-        notes
-    ]);
-    (0, _react.useEffect)(()=>{
-        if (currentNote) {
-            setContent(currentNote.content);
-            setEditedContent(currentNote.content);
-        }
-    }, [
-        currentNote
-    ]);
+    const [editedTitle, setEditedTitle] = (0, _react.useState)(decodeURIComponent(initialTitle));
+    const [editedContent, setEditedContent] = (0, _react.useState)(decodeURIComponent(initialContent));
+    const navigate = (0, _reactRouterDom.useNavigate)();
     const handleEdit = ()=>{
-        setEditedContent(content);
         setIsEditing(true);
     };
     const handleSubmit = async ()=>{
-        setContent(editedContent);
-        setIsEditing(false);
-        const updatedNote = {
-            ...currentNote,
-            content: editedContent,
-            updated_at: new Date().toISOString()
-        };
         try {
-            const token = localStorage.getItem('accessToken'); // Retrieve token from localStorage
+            const token = localStorage.getItem('accessToken');
             if (!token) {
-                alert('Authentication token not found. Please log in again.');
+                console.error('No authentication token found');
                 return;
             }
-            const response = await fetch('http://127.0.0.1:8000/api/notes/', {
+            const updatedNote = {
+                title: editedTitle,
+                content: editedContent
+            };
+            const response = await fetch(`http://127.0.0.1:8000/api/notes/${id}/`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -35845,146 +35922,285 @@ const Note = ()=>{
             });
             if (response.ok) {
                 console.log('Note updated successfully');
-                // Optionally update the notes list in state
-                const updatedNotes = notes.map((note)=>note.note_id === currentNote.note_id ? updatedNote : note);
-                setNotes(updatedNotes);
-            } else console.error('Failed to update note');
+                setIsEditing(false);
+                // Navigate to the updated note URL
+                navigate(`/notes/${id}/${encodeURIComponent(editedTitle)}/${encodeURIComponent(editedContent)}`);
+            } else if (response.status === 401) {
+                // Handle unauthorized access
+                console.error('Unauthorized access');
+                navigate('/');
+            } else {
+                const errorData = await response.json();
+                console.error('Failed to update note:', errorData);
+            }
         } catch (error) {
             console.error('Error:', error);
         }
     };
-    return id === 'create' ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _newNoteJsDefault.default), {}, void 0, false, {
-        fileName: "src/pages/Note.js",
-        lineNumber: 89,
-        columnNumber: 7
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "note",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "note-header",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "note-header-top",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/notes",
+                            className: "back-button",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 src: (0, _arrowSvgDefault.default),
                                 alt: "Back",
                                 width: "20",
-                                height: "20",
-                                style: {
-                                    borderRadius: "50%"
-                                }
+                                height: "20"
                             }, void 0, false, {
                                 fileName: "src/pages/Note.js",
-                                lineNumber: 95,
-                                columnNumber: 15
+                                lineNumber: 64,
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/pages/Note.js",
-                            lineNumber: 94,
-                            columnNumber: 13
+                            lineNumber: 63,
+                            columnNumber: 11
                         }, undefined),
-                        currentNote && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            children: currentNote.title
+                        isEditing ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            type: "text",
+                            className: "note-title-editor",
+                            value: editedTitle,
+                            onChange: (e)=>setEditedTitle(e.target.value)
                         }, void 0, false, {
                             fileName: "src/pages/Note.js",
-                            lineNumber: 97,
-                            columnNumber: 29
+                            lineNumber: 67,
+                            columnNumber: 13
+                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            className: "note-title",
+                            children: decodeURIComponent(editedTitle)
+                        }, void 0, false, {
+                            fileName: "src/pages/Note.js",
+                            lineNumber: 74,
+                            columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Note.js",
-                    lineNumber: 93,
+                    lineNumber: 62,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/Note.js",
+                lineNumber: 61,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "note-content-container",
+                children: isEditing ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
+                    className: "note-editor",
+                    value: editedContent,
+                    onChange: (e)=>setEditedContent(e.target.value),
+                    rows: "8"
+                }, void 0, false, {
+                    fileName: "src/pages/Note.js",
+                    lineNumber: 81,
+                    columnNumber: 11
+                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "note-content",
+                    children: decodeURIComponent(editedContent)
+                }, void 0, false, {
+                    fileName: "src/pages/Note.js",
+                    lineNumber: 88,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Note.js",
-                lineNumber: 92,
-                columnNumber: 9
-            }, undefined),
-            currentNote && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: isEditing ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
-                        id: "note-content",
-                        value: editedContent,
-                        onChange: (e)=>setEditedContent(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/pages/Note.js",
-                        lineNumber: 104,
-                        columnNumber: 17
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/pages/Note.js",
-                    lineNumber: 103,
-                    columnNumber: 15
-                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        id: "note-content",
-                        children: content
-                    }, void 0, false, {
-                        fileName: "src/pages/Note.js",
-                        lineNumber: 112,
-                        columnNumber: 17
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/pages/Note.js",
-                    lineNumber: 111,
-                    columnNumber: 15
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/pages/Note.js",
-                lineNumber: 101,
-                columnNumber: 11
+                lineNumber: 79,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "floating-button",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                    children: !isEditing ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        onClick: handleEdit,
+                children: !isEditing ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "edit-button",
+                    onClick: handleEdit,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         src: (0, _editSvgDefault.default),
                         alt: "Edit",
-                        width: "100%",
-                        height: "100%"
+                        width: "20",
+                        height: "20"
                     }, void 0, false, {
                         fileName: "src/pages/Note.js",
-                        lineNumber: 121,
-                        columnNumber: 15
-                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        onClick: handleSubmit,
-                        src: (0, _doneSvgDefault.default),
-                        alt: "Done",
-                        width: "100%",
-                        height: "100%"
-                    }, void 0, false, {
-                        fileName: "src/pages/Note.js",
-                        lineNumber: 129,
-                        columnNumber: 15
+                        lineNumber: 97,
+                        columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/pages/Note.js",
-                    lineNumber: 119,
+                    lineNumber: 96,
+                    columnNumber: 11
+                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "save-button",
+                    onClick: handleSubmit,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: (0, _doneSvgDefault.default),
+                        alt: "Save",
+                        width: "20",
+                        height: "20"
+                    }, void 0, false, {
+                        fileName: "src/pages/Note.js",
+                        lineNumber: 101,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/pages/Note.js",
+                    lineNumber: 100,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Note.js",
-                lineNumber: 118,
-                columnNumber: 9
+                lineNumber: 94,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/Note.js",
-        lineNumber: 91,
-        columnNumber: 7
+        lineNumber: 60,
+        columnNumber: 5
     }, undefined);
 };
-_s(Note, "d7T/BsGtK6hljPN3Wzn6OGQv6Hk=", false, function() {
+_s(Note, "xTMj/rYIiNI1q3J5hZnpjo0X9Bc=", false, function() {
     return [
         (0, _reactRouterDom.useParams),
-        (0, _globalJs.useUser)
+        (0, _reactRouterDom.useNavigate)
     ];
 });
 _c = Note;
-exports.default = Note;
+exports.default = Note; // import React, { useState, useEffect } from 'react';
+ // import { useParams, Link } from 'react-router-dom';
+ // import arrowSvg from '../svg_files/arrow.svg';
+ // import doneSvg from '../svg_files/done.svg';
+ // import editSvg from '../svg_files/edit.svg';
+ // import { useUser } from './global.js';
+ // import NewNote from './NewNote.js';
+ // const Note = () => {
+ //   const { id, title, content } = useParams();
+ //   const [notes, setNotes] = useState([]);
+ //   const [currentNote, setCurrentNote] = useState(null);
+ //   // For edit option
+ //   const [isEditing, setIsEditing] = useState(false);
+ //   // const [content, setContent] = useState('');
+ //   const [editedContent, setEditedContent] = useState('');
+ //   const findNoteById = (note_id) => {
+ //     const note = notes.find(note => note.note_id === parseInt(note_id));
+ //     if (note) {
+ //       setCurrentNote(note);
+ //     } else {
+ //       console.error(`Note with ID ${note_id} not found`);
+ //     }
+ //   };
+ //   useEffect(() => {
+ //     if (notes) {
+ //       findNoteById(id);
+ //     }
+ //   }, [id, notes]);
+ //   useEffect(() => {
+ //     if (currentNote) {
+ //       setContent(currentNote.content);
+ //       setEditedContent(currentNote.content);
+ //     }
+ //   }, [currentNote]);
+ //   const handleEdit = () => {
+ //     setEditedContent(content);
+ //     setIsEditing(true);
+ //   };
+ //   const handleSubmit = async () => {
+ //     setContent(editedContent);
+ //     setIsEditing(false);
+ //     const updatedNote = {
+ //       ...currentNote,
+ //       content: editedContent,
+ //       updated_at: new Date().toISOString(),
+ //     };
+ //     try {
+ //       const token = localStorage.getItem('accessToken'); // Retrieve token from localStorage
+ //       if (!token) {
+ //         alert('Authentication token not found. Please log in again.');
+ //         return;
+ //       }
+ //       const response = await fetch('http://127.0.0.1:8000/api/notes/', {
+ //         method: 'PUT', // Assuming update uses PUT
+ //         headers: {
+ //           'Content-Type': 'application/json',
+ //           'Authorization': `Bearer ${token}`,
+ //         },
+ //         body: JSON.stringify(updatedNote),
+ //       });
+ //       if (response.ok) {
+ //         console.log('Note updated successfully');
+ //         // Optionally update the notes list in state
+ //         const updatedNotes = notes.map(note =>
+ //           note.note_id === currentNote.note_id ? updatedNote : note
+ //         );
+ //         setNotes(updatedNotes);
+ //       } else {
+ //         console.error('Failed to update note');
+ //       }
+ //     } catch (error) {
+ //       console.error('Error:', error);
+ //     }
+ //   };
+ //   return (
+ //     (id === 'create') ? (
+ //       <NewNote />
+ //     ) : (
+ //       <div className='note'>
+ //         <div className='note-header'>
+ //           <h3>
+ //             <Link to="/notes">
+ //               <img src={arrowSvg} alt="Back" width="20" height="20" style={{ borderRadius: "50%" }} />
+ //             </Link>
+ //             {currentNote && <div>{currentNote.title}</div>}
+ //           </h3>
+ //         </div>
+ //         {currentNote && (
+ //           <div>
+ //             {isEditing ? (
+ //               <div>
+ //                 <textarea
+ //                   id="note-content"
+ //                   value={editedContent}
+ //                   onChange={(e) => setEditedContent(e.target.value)}
+ //                 />
+ //               </div>
+ //             ) : (
+ //               <div>
+ //                 <div id="note-content">{content}</div>
+ //               </div>
+ //             )}
+ //           </div>
+ //         )}
+ //         <div className='floating-button'>
+ //           <h3>
+ //             {!isEditing ? (
+ //               <img
+ //                 onClick={handleEdit}
+ //                 src={editSvg}
+ //                 alt="Edit"
+ //                 width="100%"
+ //                 height="100%"
+ //               />
+ //             ) : (
+ //               <img
+ //                 onClick={handleSubmit}
+ //                 src={doneSvg}
+ //                 alt="Done"
+ //                 width="100%"
+ //                 height="100%"
+ //               />
+ //             )}
+ //           </h3>
+ //         </div>
+ //       </div>
+ //     )
+ //   );
+ // };
+ // export default Note;
 var _c;
 $RefreshReg$(_c, "Note");
 
@@ -35993,13 +36209,13 @@ $RefreshReg$(_c, "Note");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../svg_files/arrow.svg":"4ytiA","../svg_files/done.svg":"5xzzk","../svg_files/edit.svg":"3OR43","./global.js":"g1CK0","./NewNote.js":"2agS1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5xzzk":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../svg_files/arrow.svg":"4ytiA","../svg_files/done.svg":"5xzzk","../svg_files/edit.svg":"3OR43","../style/Note.css":"kPPM8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5xzzk":[function(require,module,exports,__globalThis) {
 module.exports = require("acf2af8cb933647b").getBundleURL('bLxZJ') + "done.b22ef071.svg" + "?" + Date.now();
 
 },{"acf2af8cb933647b":"lgJ39"}],"3OR43":[function(require,module,exports,__globalThis) {
 module.exports = require("d87924d9a4c5e96a").getBundleURL('bLxZJ') + "edit.562efc8b.svg" + "?" + Date.now();
 
-},{"d87924d9a4c5e96a":"lgJ39"}],"2agS1":[function(require,module,exports,__globalThis) {
+},{"d87924d9a4c5e96a":"lgJ39"}],"kPPM8":[function() {},{}],"2agS1":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$5569 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36024,11 +36240,12 @@ const NewNote = ()=>{
     const [content, setContent] = (0, _react.useState)('');
     const [error, setError] = (0, _react.useState)(null); // To handle errors
     const [success, setSuccess] = (0, _react.useState)(false); // To indicate successful submission
+    const navigate = (0, _reactRouterDom.useNavigate)();
     const handleSubmit = async (e)=>{
         e.preventDefault();
         const noteData = {
-            title,
-            content
+            title: title,
+            content: content
         };
         try {
             const token = localStorage.getItem('accessToken'); // Retrieve token from localStorage
@@ -36036,7 +36253,7 @@ const NewNote = ()=>{
                 setError('Authentication token not found. Please log in again.');
                 return;
             }
-            const response = await fetch('http://127.0.0.1:8000/api/notes/new/', {
+            const response = await fetch('http://127.0.0.1:8000/api/notes/create/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36048,9 +36265,10 @@ const NewNote = ()=>{
                 setSuccess(true);
                 setError(null);
                 console.log('Note created successfully');
-                // Optionally, reset the form fields
-                setTitle('');
-                setContent('');
+                navigate('/notes');
+            // Optionally, reset the form fields
+            // setTitle('');
+            // setContent('');
             } else {
                 const errorData = await response.json();
                 setError(errorData.detail || 'Failed to create note');
@@ -36076,12 +36294,12 @@ const NewNote = ()=>{
                         alt: "Back"
                     }, void 0, false, {
                         fileName: "src/pages/NewNote.js",
-                        lineNumber: 58,
+                        lineNumber: 60,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/pages/NewNote.js",
-                    lineNumber: 57,
+                    lineNumber: 59,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36092,7 +36310,7 @@ const NewNote = ()=>{
                             children: "Title of Note:"
                         }, void 0, false, {
                             fileName: "src/pages/NewNote.js",
-                            lineNumber: 61,
+                            lineNumber: 63,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -36103,13 +36321,13 @@ const NewNote = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "src/pages/NewNote.js",
-                            lineNumber: 62,
+                            lineNumber: 64,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/NewNote.js",
-                    lineNumber: 60,
+                    lineNumber: 62,
                     columnNumber: 17
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36120,7 +36338,7 @@ const NewNote = ()=>{
                             children: "Content of Note:"
                         }, void 0, false, {
                             fileName: "src/pages/NewNote.js",
-                            lineNumber: 71,
+                            lineNumber: 73,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
@@ -36130,13 +36348,13 @@ const NewNote = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "src/pages/NewNote.js",
-                            lineNumber: 72,
+                            lineNumber: 74,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/NewNote.js",
-                    lineNumber: 70,
+                    lineNumber: 72,
                     columnNumber: 17
                 }, undefined),
                 error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -36144,7 +36362,7 @@ const NewNote = ()=>{
                     children: error
                 }, void 0, false, {
                     fileName: "src/pages/NewNote.js",
-                    lineNumber: 79,
+                    lineNumber: 81,
                     columnNumber: 27
                 }, undefined),
                 success && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -36152,7 +36370,7 @@ const NewNote = ()=>{
                     children: "Note created successfully!"
                 }, void 0, false, {
                     fileName: "src/pages/NewNote.js",
-                    lineNumber: 80,
+                    lineNumber: 82,
                     columnNumber: 29
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36168,23 +36386,27 @@ const NewNote = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/pages/NewNote.js",
-                        lineNumber: 82,
+                        lineNumber: 84,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/pages/NewNote.js",
-                    lineNumber: 81,
+                    lineNumber: 83,
                     columnNumber: 17
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/pages/NewNote.js",
-            lineNumber: 56,
+            lineNumber: 58,
             columnNumber: 13
         }, undefined)
     }, void 0, false);
 };
-_s(NewNote, "kyTk41HZM3RuRZrxYXXFgsLFbI0=");
+_s(NewNote, "4pjAVuO88sHrd6P2LGl87rabNwk=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = NewNote;
 exports.default = NewNote;
 var _c;
